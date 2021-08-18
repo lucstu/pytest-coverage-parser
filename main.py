@@ -26,7 +26,7 @@ def create_comment():
     data = get_data(os.environ['INPUT_FILE'])
     git = github.Github(os.environ['INPUT_TOKEN'])
     repo = git.get_repo(os.environ['GITHUB_REPOSITORY'])
-    sha = os.environ['sha']
+    sha = os.environ['GITHUB_SHA']
 
     commit = repo.get_commit(sha)
 
