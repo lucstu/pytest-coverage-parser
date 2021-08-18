@@ -12,13 +12,17 @@ def get_data(filename):
     covered_lines = coverage.attributes['lines-covered'].value
     total_line_rate = coverage.attributes['line-rate'].value
 
-    total = "Out of {} lines, {} were covered with a rate of {}".format(total_lines, covered_lines, total_line_rate)
+    total = "Out of {} lines, {} were covered with a rate of {}\n".format(total_lines, covered_lines, total_line_rate)
+    
+    total += "Filename | Line Rate\n"
+    total += "-------- | ---------\n"
 
     for case in classes:
         name = case.attributes['name'].value
         line_rate = case.attributes['line-rate'].value
 
-        total += "\nFilename: {}, Line Rate: {}".format(name, line_rate)
+        #total += "\nFilename: {}, Line Rate: {}".format(name, line_rate)
+        total += name + " | " + line_rate + "\n"
     
     return total
 
