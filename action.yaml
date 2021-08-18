@@ -1,0 +1,19 @@
+name: Pytest Coverage Parser
+
+description: This action reads a coverage xml file from pytest-cov and posts results to a commit accordingly.
+
+inputs:
+  file: # Filepath of our XML file
+    required: true
+    description: Filepath to pass into the python file.
+  token: # Github token to have access to create said issue.
+    required: true
+    description: Token of the user that creates the issue
+
+runs:
+  using: docker 
+  image: 'Dockerfile'
+
+branding: 
+  icon: arrow-down 
+  color: blue
