@@ -3,7 +3,7 @@ import github
 import os
 
 def get_data(filename):
-    doc = minidom.parse('./test.xml')
+    doc = minidom.parse(filename)
 
     classes = doc.getElementsByTagName('class')
 
